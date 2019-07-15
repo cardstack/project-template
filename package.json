@@ -1,0 +1,43 @@
+{
+  "name": "project-template",
+  "version": "0.0.1",
+  "description": "A starting template for building with the Card SDK",
+  "repository": "https://github.com/cardstack/project-template",
+  "author": "Hassan Abdel-Rahman <hassan.abdelrhaman@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8"
+  },
+  "devDependencies": {
+    "@cardstack/eslint-config": "^0.14.21",
+    "@cardstack/test-support": "^0.14.21",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.9.0",
+    "eslint-plugin-ember": "^6.0.1",
+    "eslint-plugin-mocha": "^5.2.0",
+    "eslint-plugin-node": "^8.0.0",
+    "glob": "^7.1.1",
+    "mocha": "^4.0.1",
+    "require-uncached": "^1.0.3",
+    "resolve": "^1.3.3",
+    "typescript": "3.4.5"
+  },
+  "scripts": {
+    "start-prereqs": "docker run -d -p 5432:5432 --rm --name cardstack-pg cardstack/pg-test",
+    "stop-prereqs": "docker stop cardstack-pg",
+    "start": "cd cardhost && node ./node_modules/.bin/ember serve",
+    "start-hub": "cd cardhost && ember hub:start",
+    "start-ember": "cd cardhost && HUB_URL=http://localhost:3000 node ./node_modules/.bin/ember s",
+    "test": "mocha ./node-test-runner.js --timeout 10000 && cd cardhost && node ./node_modules/.bin/ember test",
+    "card-tests": "cd cardhost && node ./node_modules/.bin/ember test",
+    "node-tests": "mocha ./node-test-runner.js --timeout 10000",
+    "lint": "eslint . --cache --parser espree"
+  },
+  "workspaces": [
+    "cards/*",
+    "packages/*",
+    "cardhost"
+  ],
+  "private": true
+}

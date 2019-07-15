@@ -1,0 +1,1 @@
+export { default } from 'project-template-common/services/model-loader';
