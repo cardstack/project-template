@@ -1,0 +1,11 @@
+.movie-embedded {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+.movie-embedded-view {
+  border: 1px black dashed;
+  border-radius: 25px;
+  width: 350px;
+}

@@ -10,8 +10,8 @@ module.exports = [{
   path: '/',
   query: {
     filter: {
-      type: { exact: 'welcome-messages' },
-      id: { exact: '1' }
+      type: { exact: 'main-boards' },
+      id: { exact: 'main' }
     }
   },
 }];

@@ -52,6 +52,8 @@
     "broccoli-source": "^1.1.0",
     "cardhost-common": "*",
     "cardhost-welcome-message": "*",
+    "cardhost-movie": "*",
+    "cardhost-main-board": "*",
     "co-body": "^6.0.0",
     "ember-ajax": "^3.1.0",
     "ember-animated-tools": "^0.4.0",

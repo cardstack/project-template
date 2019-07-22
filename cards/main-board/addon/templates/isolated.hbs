@@ -1,0 +1,29 @@
+<div class="main-board-isolated">
+  <h1 data-test-main-board-isolated-title>{{content.title}}</h1>
+  <h3 data-test-main-board-isolated-message>{{content.message}}</h3>
+  {{#mock-login as |login|}} <button {{action login}}>Edit Content</button>{{/mock-login}}
+  <br><br>
+  <div class='container list-types-buttons'>
+    <div class='btn-group'>
+      <button {{action showSelectedMovies 'watchedMovies'}}>Watched Movies</button>
+      <button {{action showSelectedMovies 'currentlyWatchingMovies'}}>Currently Watching Movies</button>
+      <button {{action showSelectedMovies 'toWatchMovies'}}>To Watch Movies</button>
+    </div>
+  </div>
+  <div class="movie-list">
+    {{#if showBoard}}
+      {{#if (eq movieAmount 1)}}
+        <h3 data-test-main-board-isolated-title>There is 1 movie on this list.</h3>
+      {{else}}
+        <h3 data-test-main-board-isolated-title>There are {{movieAmount}} movies on this list.</h3>
+      {{/if}}
+      <ol>
+        {{#cs-field content selectedStatue as |movies|}}
+          {{#each movies as |movie|}}
+            <li>{{cardstack-content content=movie format='embedded'}}</li>
+          {{/each}}
+        {{/cs-field}}
+      </ol>
+    {{/if}}
+  </div>
+</div>
