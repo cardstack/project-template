@@ -1,5 +1,6 @@
 {{#cardstack-edges}}
   {{#squishable-container}}
+    {{#mock-login as |login|}} <button {{action login}}>Edit Content</button>{{/mock-login}}
     {{outlet}}
   {{/squishable-container}}
 {{/cardstack-edges}}

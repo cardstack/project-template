@@ -1,5 +1,5 @@
 {
-  "name": "cardhost-<%= dasherizedModuleName %>",
+  "name": "cardhost-photographer",
   "version": "0.0.0",
   "keywords": [
     "cardstack-plugin",
