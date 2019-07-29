@@ -1,2 +1,41 @@
 @import "movie-embedded";
 @import "movie-isolated";
+:root{
+    --movie-horror: red;
+    --movie-action: #f56105;
+    --movie-comedy: #57ed0c;
+    --movie-drama: #6f0bda;
+    --movie-fantasy: #0bd3da;
+    --movie-romance: #f881af;
+    --movie-mystery: #054266;
+    --movie-sci-fi: blue;
+    --movie-adventure: #fdb036;
+  }
+
+.movie-horror {
+background-color: var(--movie-horror);
+}
+.movie-action {
+  background-color: var(--movie-action);
+}
+.movie-comedy {
+  background-color: var(--movie-comedy);
+}
+.movie-drama {
+  background-color: var(--movie-drama);
+} 
+.movie-fantasy {
+  background-color: var(--movie-fantasy);
+} 
+.movie-romance {
+  background-color: var(--movie-romance);
+}
+.movie-mystery {
+  background-color: var(--movie-mystery);
+}
+.movie-sci-fi {
+  background-color: var(--movie-sci-fi);
+}
+.movie-adventure {
+  background-color: var(--movie-adventure);
+}

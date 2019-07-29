@@ -14,6 +14,7 @@ export default Component.extend({
     },
     showBoard: false,
     selectedStatue: "",
+    subTitle: "",
 
     movieAmount: computed('selectedStatue', function() {
         return this.get('statues')[this.get('selectedStatue')].length;
@@ -22,6 +23,15 @@ export default Component.extend({
     showSelectedMovies: function(statue) {
         this.set('showBoard', true);
         this.set('selectedStatue', statue);
+        if(statue === 'watchedMovies'){
+            this.set('subTitle', 'Watched Movies'); 
+        }
+        else if(statue === 'currentlyWatchingMovies'){
+            this.set('subTitle', 'Currently Watching Movies'); 
+        }
+        else if(statue === 'toWatchMovies'){
+            this.set('subTitle', 'To Watch Movies'); 
+        }
     }
 
  });

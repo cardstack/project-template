@@ -1,7 +1,12 @@
-<div class='movie-embedded-view'>
+<div class='movie-embedded-view movie-{{genre}}'>
+{{#if nowPlaying}}  
+<div class="movie-embedded-view-playing-tag">Now Playing</div>
+{{/if}}
 <a class="movie-embedded" href={{cardstack-url content}} >
-  <h3 data-test-movie-isolated-title>Title: {{content.title}}</h3>
-  <h3 data-test-movie-isolated-title>Year: {{content.year}}</h3>
-  <h3 data-test-movie-isolated-title>Genre: {{content.genre}}</h3>
+  <h3 data-test-movie-isolated-title>{{content.title}}</h3>
+  <div class="movie-embedded-view-bottom">
+    <h3 data-test-movie-isolated-title>{{content.year}}</h3>
+    <h3 data-test-movie-isolated-title>{{content.genre}}</h3>
+  </div>
 </a>
 </div>

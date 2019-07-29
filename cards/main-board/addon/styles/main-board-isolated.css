@@ -1,12 +1,92 @@
 .main-board-isolated {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 60%;
+  margin: auto;
+  margin-top: 5%;
   text-align: center;
-  border: 1px blue dashed;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.main-board-isolated-title{
+  float: left;
+  margin-bottom: 40px;
+}
+
+.main-board-isolated-subtitle{
+  clear: both;
+  float: left;
+  margin-bottom: 0;
 }
 
 .movie-list {
+  clear: both;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.btn-group {
+  clear: both;
+  display: flex;
+}
+
+.btn-group .btn {
+  background-color: white;
+  border: 1px solid grey;
+  color: white;
+  padding: 12px 28px;
+  color: #1b64f1;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.btn-group .btn:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.btn-group .btn:hover {
+  background-color: #3c3a3a;
+  color: white;
+}
+
+.btn-group .btn1 {
+  border-radius: 5px 0px 0px 5px;
+  width: 30%;
+}
+.btn-group .btn2 {
+  width: 40%;
+}
+.btn-group .btn3 {
+  border-radius: 0px 5px 5px 0px;
+  width: 30%;
+}
+
+.btn-edit {
+  float: right;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  background: inherit;
+}
+
+.main-board-isolated-movie-count {
+  clear: both;
+  font-weight: light;
+  float: left;
+  margin-bottom: 20px;
+}
+
+hr{
+  clear: both;
+}
+
+body {
+  background-color: #6b536f;
   justify-content: center;
+  align-content: center;
 }

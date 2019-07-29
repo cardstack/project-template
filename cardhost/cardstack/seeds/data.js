@@ -7,7 +7,7 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 1).withAttributes({
     title: 'Avengers Endgame',
     year: 2019,
-    genre: 'adventure',
+    genre: 'Adventure',
     summary: 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.',
     playing: true,
     notes: ''
@@ -15,7 +15,7 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 2).withAttributes({
     title: 'Spiderman: Far From Home',
     year: 2019,
-    genre: 'adventure',
+    genre: 'Sci-Fi',
     summary: 'Following the events of Avengers: Endgame, Spider-Man must step up to take on new threats in a world that has changed forever.',
     playing: false,
     notes: ''
@@ -23,7 +23,7 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 3).withAttributes({
     title: 'Thor Ragnarok',
     year: 2017,
-    genre: 'comedy',
+    genre: 'Comedy',
     summary: 'Thor (Chris Hemsworth) is imprisoned on the planet Sakaar, and must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela (Cate Blanchett).',
     playing: false,
     notes: ''
@@ -31,7 +31,7 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 4).withAttributes({
     title: 'Doctor Strange',
     year: 2016,
-    genre: 'science-fiction',
+    genre: 'Fantasy',
     summary: 'While on a journey of physical and spiritual healing, a brilliant neurosurgeon is drawn into the world of the mystic arts.',
     playing: false,
     notes: ''
@@ -39,7 +39,7 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 5).withAttributes({
     title: 'Black Widow',
     year: 2020,
-    genre: 'horror',
+    genre: 'Horror',
     summary: 'Not announced',
     playing: false,
     notes: ''
@@ -47,7 +47,7 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 6).withAttributes({
     title: 'Iron Man',
     year: 2008,
-    genre: 'adventure',
+    genre: 'Action',
     summary: 'After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.',
     playing: false,
     notes: ''
@@ -55,7 +55,7 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 7).withAttributes({
     title: 'Captain America Civil War',
     year: 2016,
-    genre: 'action',
+    genre: 'Action',
     summary: 'Political involvement in the Avengers affairs causes a rift between Captain America and Iron Man.',
     playing: false,
     notes: ''
@@ -63,13 +63,13 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 8).withAttributes({
     title: 'Guardians of the Galaxy Vol. 3',
     year: 2020,
-    genre: 'comedy',
+    genre: 'Comedy',
     summary: 'Not announced',
     playing: false,
     notes: ''
   });
   factory.addResource('main-boards', 'main').withAttributes({
-    title: 'Welcome to your personalized Movie Tracker',
+    title: 'Personal Movie Tracker',
     message: 'Please choose which category to view'
   })
   .withRelated('watched-movies', [
