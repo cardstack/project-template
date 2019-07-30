@@ -1,36 +1,38 @@
 <div class="movie-isolated">
-  <div class="movie-isolated-general-info">
-    <h3 class="movie-isolated-view-prev-page"><a href='/'> <span>&#8592;</span> Back to List</a></h3>
-    <div class="movie-{{genre}} movie-isolated-view-title-area">
-      {{#if nowPlaying}}  
-        <div class="movie-isolated-view-playing-tag">Now Playing</div>
+  <h3 class="movie-isolated-view-prev-page"><a href='/'> <span>&#8592;</span> Back to List</a></h3>
+  <div class="movie-isolated-view-content">
+    <div class="movie-isolated-general-info">
+      <div class="movie-{{genre}} movie-isolated-view-title-area">
+        {{#if nowPlaying}}  
+          <div class="movie-isolated-view-playing-tag">Now Playing</div>
+        {{/if}}
+        <h1 data-test-movie-isolated-title>{{content.title}}</h1>
+      </div>
+      <div class="movie-isolated-view-info">
+        <div class="movie-isolated-view-sub-info">
+          <div class="movie-isolated-view-year">
+            <p data-test-movie-isolated-year-title><b>Released</b></p>
+            <p data-test-movie-isolated-year>{{content.year}}</p>
+          </div>
+          <div class="movie-isolated-view-year">
+            <p data-test-movie-isolated-genre-title><b>Genre</b></p>
+            <p data-test-movie-isolated-genre>{{content.genre}}</p>
+          </div>
+        </div>
+        <hr>
+        <div class="movie-isolated-view-synopsis">
+          <p data-test-movie-isolated-short-summary><b>Synopsis</b></p>
+          <p data-test-movie-isolated-short-summary>{{content.summary}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="movie-isolated-notes">
+      <p data-test-movie-isolated-notes><b>Notes</b></p>
+      {{#if content.notes}}
+        <p data-test-movie-isolated-notes>{{content.notes}}</p>
+      {{else}}
+        <p data-test-movie-isolated-notes>Start taking notes!</p>
       {{/if}}
-      <h1 data-test-movie-isolated-title>{{content.title}}</h1>
     </div>
-    <div class="movie-isolated-view-info">
-      <div class="movie-isolated-view-sub-info">
-        <div class="movie-isolated-view-year">
-          <p data-test-movie-isolated-year-title><b>Released</b></p>
-          <p data-test-movie-isolated-year>{{content.year}}</p>
-        </div>
-        <div class="movie-isolated-view-year">
-          <p data-test-movie-isolated-genre-title><b>Genre</b></p>
-          <p data-test-movie-isolated-genre>{{content.genre}}</p>
-        </div>
-      </div>
-      <hr>
-      <div class="movie-isolated-view-synopsis">
-        <p data-test-movie-isolated-short-summary><b>Synopsis</b></p>
-        <p data-test-movie-isolated-short-summary>{{content.summary}}</p>
-      </div>
-    </div>
-  </div>
-  <div class="movie-isolated-notes">
-    <p data-test-movie-isolated-notes><b>Notes</b></p>
-    {{#if content.notes}}
-      <p data-test-movie-isolated-notes>{{content.notes}}</p>
-    {{else}}
-      <p data-test-movie-isolated-notes>Start taking notes!</p>
-    {{/if}}
   </div>
 </div>

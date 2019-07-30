@@ -1,15 +1,15 @@
 @import "movie-embedded";
 @import "movie-isolated";
 :root{
-    --movie-horror: red;
-    --movie-action: #f56105;
-    --movie-comedy: #57ed0c;
-    --movie-drama: #6f0bda;
-    --movie-fantasy: #0bd3da;
-    --movie-romance: #f881af;
-    --movie-mystery: #054266;
-    --movie-sci-fi: blue;
-    --movie-adventure: #fdb036;
+    --movie-horror: #EB3223;
+    --movie-action: #EF752F;
+    --movie-comedy: #71A234;
+    --movie-drama: #611CC4;
+    --movie-fantasy: #7C9C93;
+    --movie-romance: #ED5F9A;
+    --movie-mystery: #2D4357;
+    --movie-sci-fi: #014CF5;
+    --movie-adventure: #C5862E;
   }
 
 .movie-horror {

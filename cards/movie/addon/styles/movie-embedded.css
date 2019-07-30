@@ -1,5 +1,4 @@
 .movie-embedded {
-  clear: both;
   display: block;
   text-decoration: none;
   text-align: center;
@@ -20,15 +19,11 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-.movie-embedded-horror {
-  background-color: var(--movie-embedded-horror);
-}
 
 .movie-embedded-view-bottom {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  float: bottom;
 }
 
 .movie-embedded-view-playing-tag {

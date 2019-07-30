@@ -8,28 +8,27 @@
   border: 1px solid black;
   border-radius: 25px;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-board-isolated-title{
-  float: left;
+  align-self: flex-start;
   margin-bottom: 40px;
 }
 
 .main-board-isolated-subtitle{
-  clear: both;
-  float: left;
+  align-self: flex-start;
   margin-bottom: 0;
 }
 
 .movie-list {
-  clear: both;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .btn-group {
-  clear: both;
   display: flex;
 }
 
@@ -66,7 +65,7 @@
 }
 
 .btn-edit {
-  float: right;
+  align-self: flex-end;
   font-size: 18px;
   font-weight: 500;
   border: none;
@@ -75,18 +74,17 @@
 }
 
 .main-board-isolated-movie-count {
-  clear: both;
   font-weight: light;
-  float: left;
+  align-self: flex-start;
   margin-bottom: 20px;
 }
 
 hr{
-  clear: both;
+  align-self: center;
 }
 
 body {
-  background-color: #6b536f;
+  background-color: #5b5a6e;
   justify-content: center;
   align-content: center;
 }
