@@ -47,7 +47,7 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
   factory.addResource('movies', 6).withAttributes({
     title: 'Iron Man',
     year: 2008,
-    genre: 'Action',
+    genre: 'Other',
     summary: 'After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.',
     playing: false,
     notes: ''

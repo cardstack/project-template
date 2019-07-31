@@ -10,6 +10,7 @@
     --movie-mystery: #2D4357;
     --movie-sci-fi: #014CF5;
     --movie-adventure: #C5862E;
+    --movie-other: #949494;
   }
 
 .movie-horror {
@@ -38,4 +39,7 @@ background-color: var(--movie-horror);
 }
 .movie-adventure {
   background-color: var(--movie-adventure);
+}
+.movie-other {
+  background-color: var(--movie-other);
 }
