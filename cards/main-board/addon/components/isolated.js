@@ -23,13 +23,13 @@ export default Component.extend({
     showSelectedMovies: function(statue) {
         this.set('showBoard', true);
         this.set('selectedStatue', statue);
-        if(statue === 'watchedMovies'){
+        if (statue === 'watchedMovies') {
             this.set('subTitle', 'Watched Movies'); 
         }
-        else if(statue === 'currentlyWatchingMovies'){
+        else if (statue === 'currentlyWatchingMovies') {
             this.set('subTitle', 'Currently Watching Movies'); 
         }
-        else if(statue === 'toWatchMovies'){
+        else if (statue === 'toWatchMovies') {
             this.set('subTitle', 'To Watch Movies'); 
         }
     }

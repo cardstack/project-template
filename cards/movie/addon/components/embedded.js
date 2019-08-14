@@ -5,10 +5,10 @@ import { computed } from '@ember/object';
 export default Component.extend({ 
     layout,
     genre: computed('content.genre', function() {
-        if(this.content.genre === undefined) {
+        if (this.content.genre === undefined) {
             return '';
         }
-        else if(this.content.genre === 'Sci-Fi'){
+        else if (this.content.genre === 'Sci-Fi') {
             return "sci-fi";
         }
         return this.content.genre.charAt(0).toLowerCase() + this.content.genre.slice(1);
