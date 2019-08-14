@@ -105,8 +105,6 @@ module.exports = function () {
     factory.addResource('grants', 'cardstack-files-world-read')
     .withRelated('who', [{ type: 'groups', id: 'everyone' }])
     .withRelated('types', [
-      { type: 'content-types', id: 'cardstack-files' },
-      { type: 'content-types', id: 'cardstack-images' },
       { type: 'content-types', id: 'movies' },
       { type: 'content-types', id: 'main-boards' },
     ])
@@ -118,8 +116,6 @@ module.exports = function () {
   factory.addResource('grants', 'cardstack-files-writers-create')
     .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
     .withRelated('types', [
-      { type: 'content-types', id: 'cardstack-files' },
-      { type: 'content-types', id: 'cardstack-images' },
       { type: 'content-types', id: 'movies' },
       { type: 'content-types', id: 'main-boards' },
     ])

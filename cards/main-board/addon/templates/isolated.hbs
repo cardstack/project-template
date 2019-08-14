@@ -1,5 +1,9 @@
 <div class="main-board-isolated">
-{{#mock-login as |login|}} <button class='btn-edit' {{action login}}>Edit Content</button>{{/mock-login}}
+{{#mock-login as |login|}}
+  <button class='btn-edit' {{action login}}>
+    Edit Content
+  </button>
+{{/mock-login}}
   <h1 class="main-board-isolated-title" data-test-main-board-isolated-title>{{content.title}}</h1>
     <div class='btn-group'>
       <button class='btn btn1' {{action showSelectedMovies 'watchedMovies'}}>Watched Movies</button>
