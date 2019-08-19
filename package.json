@@ -26,11 +26,11 @@
   "scripts": {
     "start-prereqs": "docker run -d -p 5432:5432 --rm --name cardstack-pg cardstack/pg-test",
     "stop-prereqs": "docker stop cardstack-pg",
-    "start": "cd cardhost && node ./node_modules/.bin/ember serve",
+    "start": "cd cardhost && node ./node_modules/ember-cli/bin/ember serve",
     "start-hub": "cd cardhost && ember hub:start",
-    "start-ember": "cd cardhost && HUB_URL=http://localhost:3000 node ./node_modules/.bin/ember s",
-    "test": "mocha ./node-test-runner.js --timeout 10000 && cd cardhost && node ./node_modules/.bin/ember test",
-    "card-tests": "cd cardhost && node ./node_modules/.bin/ember test",
+    "start-ember": "cd cardhost && HUB_URL=http://localhost:3000 node ./node_modules/ember-cli/bin/ember s",
+    "test": "mocha ./node-test-runner.js --timeout 10000 && cd cardhost && node ./node_modules/ember-cli/bin/ember test",
+    "card-tests": "cd cardhost && node ./node_modules/ember-cli/bin/ember test",
     "node-tests": "mocha ./node-test-runner.js --timeout 10000",
     "lint": "eslint . --cache --parser espree"
   },
