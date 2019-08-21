@@ -2,14 +2,14 @@ const JSONAPIFactory = require('@cardstack/test-support/jsonapi-factory');
 
 let factory = new JSONAPIFactory();
 factory.addResource('content-types', 'photos')
-  // .withAttributes({
-  //   defaultIncludes: ['scorecards'],
-  //   fieldsets: {
-  //     isolated: [
-  //       {field: 'scorecards', format: 'embedded'}
-  //     ]
-  //   }
-  // })
+  .withAttributes({
+    defaultIncludes: ['scorecards'],
+    fieldsets: {
+      isolated: [
+        {field: 'scorecards', format: 'embedded'}
+      ]
+    }
+  })
   .withRelated('fields', [
     factory.addResource('fields', 'title').withAttributes({
       fieldType: '@cardstack/core-types::string'

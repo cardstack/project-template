@@ -3,10 +3,10 @@ const JSONAPIFactory = require('@cardstack/test-support/jsonapi-factory');
 let factory = new JSONAPIFactory();
 factory.addResource('content-types', 'dashboards')
   .withAttributes({
-    defaultIncludes: ['scorecards'],
+    defaultIncludes: ['photos'],
     fieldsets: {
       isolated: [
-        {field: 'scorecards', format: 'embedded'}
+        {field: 'photos', format: 'embedded'}
       ]
     }
   })
@@ -21,11 +21,11 @@ factory.addResource('content-types', 'dashboards')
     })
     .withRelated('related-types', [{ type: 'content-types', id: 'photos' }]),
 
-    factory.addResource('fields', 'scorecards').withAttributes({
+    factory.addResource('fields', 'photos').withAttributes({
       fieldType: '@cardstack/core-types::has-many',
       editorComponent: 'field-editors/dropdown-search-multi-select-editor',
     })
-    .withRelated('related-types', [{ type: 'content-types', id: 'scorecards' }]),
+    .withRelated('related-types', [{ type: 'content-types', id: 'photos' }]),
   ]);
 
   factory.addResource('grants', 'dashboard-world-read')

@@ -7,10 +7,9 @@
       {{/github-login}}
     {{else}}
       {{#mock-login as |login|}}
-        {{!-- {{yield session login}} --}}
           <button class='btn-edit' {{action login}}>
-    Edit Content
-  </button>
+            Edit Content
+          </button>
       {{/mock-login}}
     {{/if}}
   {{/cardstack-session}}
