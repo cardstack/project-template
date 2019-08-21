@@ -30,5 +30,28 @@ factory.addResource('content-types', 'photos')
     .withRelated('related-types', [{ type: 'content-types', id: 'scorecards' }]),
   ]);
 
+
+  factory.addResource('grants', 'photo-world-read')
+  .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+  .withRelated('types', [
+    { type: 'content-types', id: 'photos' }
+  ])
+  .withAttributes({
+    'may-read-resource': true,
+    'may-read-fields': true,
+  });
+
+factory.addResource('grants', 'photo-writers-update')
+  .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+  .withRelated('types', [
+    { type: 'content-types', id: 'photos' }
+  ])
+  .withAttributes({
+    'may-create-resource': true,
+    'may-update-resource': true,
+    'may-delete-resource': true,
+    'may-write-fields': true
+  });
+
 let models = factory.getModels();
 module.exports = function() { return models; };
