@@ -1,3 +1,9 @@
 <div class="dashboard-isolated">
-  <h1 data-test-dashboard-isolated-title>{{content.title}}</h1>
+  <h1 data-test-dashboard-isolated-title>{{content.heading}}</h1>
 </div>
+{{#cs-field content 'entries' as |photos|}}
+  {{#each photos as |photo|}}
+{{photo.title}}
+    {{cardstack-content content=photo format='embedded'}}
+  {{/each}}
+{{/cs-field}}
