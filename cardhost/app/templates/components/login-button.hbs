@@ -1,3 +1,4 @@
+
 {{#if (is-component "cardstack-session")}}
   {{#cardstack-session as |session|}}
     {{#if useGithubAuth}}
@@ -6,7 +7,10 @@
       {{/github-login}}
     {{else}}
       {{#mock-login as |login|}}
-        {{yield session login}}
+        {{!-- {{yield session login}} --}}
+          <button class='btn-edit' {{action login}}>
+    Edit Content
+  </button>
       {{/mock-login}}
     {{/if}}
   {{/cardstack-session}}
