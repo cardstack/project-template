@@ -9,9 +9,13 @@ Seed data defined here will be available in the
 ephemeral data source.
 */
 
-  // factory.addResource('card-names', 1).withAttributes({
-  //     title: 'some-title',
-  //   });
+  factory.addResource('dashboards', 1).withAttributes({
+      heading: 'Dashboard heading',
+    });
+
+    factory.addResource('photos', 1).withAttributes({
+      title: 'My title 1',
+    });
 }
 
 
