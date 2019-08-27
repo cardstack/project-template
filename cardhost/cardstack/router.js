@@ -7,6 +7,7 @@ module.exports = [{
     }
   },
 },{
+  // edit this to change the card that is shown at at the index route
   path: '/',
   query: {
     filter: {
