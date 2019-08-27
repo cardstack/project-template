@@ -3,5 +3,12 @@
   <div>Score: {{content.score}}</div>
   <div>Comment:</div>
   <div>{{content.comment}}</div>
+  {{#cs-field content 'aphoto' as |ratedPhoto|}}
+
+  {{log content.aphoto}}
+
+    {{cardstack-content content=ratedPhoto format='embedded'}}
+
+{{/cs-field}}
   
 </div>

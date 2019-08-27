@@ -3,10 +3,11 @@ const JSONAPIFactory = require('@cardstack/test-support/jsonapi-factory');
 let factory = new JSONAPIFactory();
 factory.addResource('content-types', 'scorecards')
 .withAttributes({
-  defaultIncludes: ['photos'],
+  defaultIncludes: ['photos', 'aphoto'],
   fieldsets: {
     isolated: [
-      {field: 'photos', format: 'embedded'}
+      {field: 'photos', format: 'embedded'},
+      {field: 'aphoto', format: 'embedded'}
     ]
   }
 })
@@ -15,15 +16,15 @@ factory.addResource('content-types', 'scorecards')
       fieldType: '@cardstack/core-types::integer'
     }),
 
-    factory.addResource('fields', 'comment').withAttributes({
-      fieldType: '@cardstack/core-types::string'
-    }),
+    // factory.addResource('fields', 'comment').withAttributes({
+    //   fieldType: '@cardstack/core-types::string'
+    // }),
 
-    // factory.addResource('fields', 'photo').withAttributes({
-    //   fieldType: '@cardstack/core-types::belongs-to',
-    //   editorComponent: 'field-editors/dropdown-search-multi-select-editor',
-    // })
-    // .withRelated('related-types', [{ type: 'content-types', id: 'photos' }]),
+    factory.addResource('fields', 'aphoto').withAttributes({
+      fieldType: '@cardstack/core-types::belongs-to',
+      editorComponent: 'field-editors/dropdown-search-editor',
+    })
+    .withRelated('related-types', [{ type: 'content-types', id: 'photos' }]),
   ]);
 
   factory.addResource('grants', 'scorecard-world-read')

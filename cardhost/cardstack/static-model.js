@@ -125,31 +125,31 @@ module.exports = function () {
       'may-read-fields': true,
     });
 
-    factory.addResource('grants', 'cardstack-files-world-read')
-    .withRelated('who', [{ type: 'groups', id: 'everyone' }])
-    .withRelated('types', [
-      { type: 'content-types', id: 'scorecards' },
-      { type: 'content-types', id: 'dashboards' },
-      { type: 'content-types', id: 'photos' },
-    ])
-    .withAttributes({
-      'may-read-resource': true,
-      'may-read-fields': true,
-    });
+    // factory.addResource('grants', 'cardstack-files-world-read')
+    // .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+    // .withRelated('types', [
+    //   { type: 'content-types', id: 'scorecards' },
+    //   { type: 'content-types', id: 'dashboards' },
+    //   { type: 'content-types', id: 'photos' },
+    // ])
+    // .withAttributes({
+    //   'may-read-resource': true,
+    //   'may-read-fields': true,
+    // });
 
-  factory.addResource('grants', 'cardstack-files-writers-create')
-    .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
-    .withRelated('types', [
-      { type: 'content-types', id: 'scorecards' },
-      { type: 'content-types', id: 'dashboards' },
-      { type: 'content-types', id: 'photos' },
-    ])
-    .withAttributes({
-      'may-write-fields': true,
-      'may-create-resource': true,
-      'may-update-resource': true,
-      'may-delete-resource': true
-    });
+  // factory.addResource('grants', 'cardstack-files-writers-create')
+  //   .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
+  //   .withRelated('types', [
+  //     { type: 'content-types', id: 'scorecards' },
+  //     { type: 'content-types', id: 'dashboards' },
+  //     { type: 'content-types', id: 'photos' },
+  //   ])
+  //   .withAttributes({
+  //     'may-write-fields': true,
+  //     'may-create-resource': true,
+  //     'may-update-resource': true,
+  //     'may-delete-resource': true
+  //   });
 
   return factory.getModels();
 };
