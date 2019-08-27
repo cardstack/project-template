@@ -38,6 +38,15 @@ factory.addResource('content-types', 'photos')
       'may-read-fields': true,
     });
 
+    factory.addResource('groups', 'admin-testing')
+    .withAttributes({
+      'search-query': {
+        filter: {
+          type: { exact: 'github-users' },
+          permissions: { exact: 'something-unused' }
+        }
+      }
+    });
 
 factory.addResource('grants', 'admin-update')
   .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
@@ -49,11 +58,11 @@ factory.addResource('grants', 'admin-update')
     
   ])
   .withAttributes({
-    'may-read-resource': true,
+    // 'may-read-resource': true, // inherited from everyone grant
     'may-read-fields': true,
-    'may-create-resource': true,
-    'may-update-resource': true,
-    'may-delete-resource': true,
+    // 'may-create-resource': true,
+    // 'may-update-resource': true,
+    // 'may-delete-resource': true,
     'may-write-fields': true
   });
 

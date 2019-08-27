@@ -116,10 +116,10 @@ module.exports = function () {
 
   factory.addResource('grants')
     .withRelated('who', [{ type: 'groups', id: 'everyone' }])
-    .withRelated('types', contentTypes.concat([
+    .withRelated('types', [
       { type: 'content-types', id: 'content-types' },
       { type: 'content-types', id: 'spaces' },
-    ]))
+    ])
     .withAttributes({
       'may-read-resource': true,
       'may-read-fields': true,

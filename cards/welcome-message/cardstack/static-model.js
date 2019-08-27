@@ -15,5 +15,16 @@ factory.addResource('content-types', 'welcome-messages')
     title: 'Welcome!',
     message: 'Get ready to build your first project with the Card SDK.'
   });
+
+  factory.addResource('grants', 'welcome-message-world-read')
+  .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+  .withRelated('types', [
+    { type: 'content-types', id: 'welcome-messages' }
+  ])
+  .withAttributes({
+    'may-read-resource': true,
+    'may-read-fields': true,
+  });
+
 let models = factory.getModels();
 module.exports = function() { return models; };
