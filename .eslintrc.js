@@ -1,4 +1,4 @@
-const browserBase = require('@cardstack/eslint-config/browser');
+const browserBase = require('@cardstack/eslint-config/-browser');
 const nodeBase = require('@cardstack/eslint-config/-node');
 
 module.exports = Object.assign({}, browserBase, {
