@@ -4,7 +4,7 @@ let factory = new JSONAPIFactory();
 factory.addResource('content-types', 'photos')
 
   .withRelated('fields', [
-    factory.addResource('fields', 'title').withAttributes({
+    factory.addResource('fields', 'photo-title').withAttributes({
       fieldType: '@cardstack/core-types::string'
     }),
 
@@ -29,7 +29,7 @@ factory.addResource('content-types', 'photos')
       { type: 'content-types', id: 'photos' }
     ])
     .withRelated('fields', [
-      {type: 'fields', id: 'title'},
+      {type: 'fields', id: 'photo-title'},
       {type: 'fields', id: 'description'},
       {type: 'fields', id: 'url'},
     ])
@@ -50,15 +50,12 @@ factory.addResource('content-types', 'photos')
 
 factory.addResource('grants', 'admin-update')
   .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
-  .withRelated('types', [
-    { type: 'content-types', id: 'photos' }
-  ])
   .withRelated('fields', [
     {type: 'fields', id: 'comment'},
     
   ])
   .withAttributes({
-    // 'may-read-resource': true, // inherited from everyone grant
+    'may-read-resource': true,
     'may-read-fields': true,
     // 'may-create-resource': true,
     // 'may-update-resource': true,

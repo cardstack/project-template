@@ -14,7 +14,7 @@ ephemeral data source.
     });
 
     factory.addResource('photos', 1).withAttributes({
-      title: 'My title 1',
+      "photo-title": 'My title 1',
       comment: 'only for admins'
     });
 }

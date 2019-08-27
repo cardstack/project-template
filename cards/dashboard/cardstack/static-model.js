@@ -12,7 +12,7 @@ factory.addResource('content-types', 'dashboards')
     }
   })
   .withRelated('fields', [
-    {type: 'fields', id: 'title'},
+    // {type: 'fields', id: 'title'},
     factory.addResource('fields', 'heading').withAttributes({
       fieldType: '@cardstack/core-types::string'
     }),
