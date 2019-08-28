@@ -27,8 +27,10 @@
   },
   "devDependencies": {
     "@cardstack/eslint-config": "^0.14.21",
+    "@cardstack/github-auth": "^0.14.21",
     "@cardstack/jsonapi": "^0.14.21",
     "@cardstack/mobiledoc": "^0.14.21",
+    "@cardstack/mock-auth": "^0.14.21",
     "@cardstack/routing": "^0.14.21",
     "@cardstack/test-support": "^0.14.21",
     "@ember/jquery": "^0.5.2",
