@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Run Hub",
-      "cwd": "${workspaceRoot}/project-template",
+      "cwd": "${workspaceRoot}/cardhost",
       "program": "${workspaceRoot}/node_modules/@cardstack/hub/bin/cardstack-hub.js",
       "console": "integratedTerminal",
       "args": [
@@ -16,19 +16,19 @@
       "env": {
         "PGPORT": "5432",
         "CARDSTACK_SESSIONS_KEY": "SBgEzGrr5IcpFbRQHQVjfSY/Rt70yXsljfcrl4k99Fw=",
-        "PGSEARCH_NAMESPACE": "project-template_development",
-        "INITIAL_DATA_DIR": "${workspaceRoot}/project-template/cardstack",
+        "PGSEARCH_NAMESPACE": "project_template_development",
+        "INITIAL_DATA_DIR": "${workspaceRoot}/cardhost/cardstack",
         "HUB_ENVIRONMENT": "development",
         "CARDSTACK_DEV": true,
         "PORT": "3000",
-        "LOG_LEVELS": "cardstack/ethereum=debug,project-template/crypto-compare=debug"
+        "LOG_LEVELS": "*=info"
       }
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Run Hub for acceptance tests",
-      "cwd": "${workspaceRoot}/project-template",
+      "cwd": "${workspaceRoot}/cardhost",
       "program": "${workspaceRoot}/node_modules/@cardstack/hub/bin/cardstack-hub.js",
       "console": "integratedTerminal",
       "args": [
@@ -36,8 +36,8 @@
       "env": {
         "PGPORT": "5432",
         "CARDSTACK_SESSIONS_KEY": "SBgEzGrr5IcpFbRQHQVjfSY/Rt70yXsljfcrl4k99Fw=",
-        "PGSEARCH_NAMESPACE": "project-template_test",
-        "INITIAL_DATA_DIR": "${workspaceRoot}/project-template/cardstack",
+        "PGSEARCH_NAMESPACE": "project_template_test",
+        "INITIAL_DATA_DIR": "${workspaceRoot}/cardhost/cardstack",
         "HUB_ENVIRONMENT": "test",
         "CARDSTACK_DEV": true,
         "PORT": "3000"
@@ -55,7 +55,7 @@
       "env": {
         "PGPORT": "5432",
         "CARDSTACK_SESSIONS_KEY": "SBgEzGrr5IcpFbRQHQVjfSY/Rt70yXsljfcrl4k99Fw=",
-        "PGSEARCH_NAMESPACE": "project-template_test",
+        "PGSEARCH_NAMESPACE": "project_template_test",
         "INITIAL_DATA_DIR": "${workspaceRoot}/cards/article/tests/dummy/cardstack",
         "HUB_ENVIRONMENT": "test",
         "PORT": "3000"
@@ -65,9 +65,9 @@
       "type": "node",
       "request": "launch",
       "name": "Run ember",
-      "cwd": "${workspaceRoot}/project-template",
+      "cwd": "${workspaceRoot}/cardhost",
       "console": "integratedTerminal",
-      "program": "${workspaceRoot}/project-template/node_modules/.bin/ember",
+      "program": "${workspaceRoot}/cardhost/node_modules/.bin/ember",
       "args": [
           "serve",
           "--print"

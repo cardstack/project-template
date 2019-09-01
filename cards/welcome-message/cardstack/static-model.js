@@ -16,13 +16,22 @@ factory.addResource('content-types', 'welcome-messages')
     message: 'Get ready to build your first project with the Card SDK.'
   });
 
-  factory.addResource('grants', 'welcome-message-world-read')
+  factory.addResource('grants', 'welcome-message-world-read-resource')
   .withRelated('who', [{ type: 'groups', id: 'everyone' }])
   .withRelated('types', [
     { type: 'content-types', id: 'welcome-messages' }
   ])
   .withAttributes({
     'may-read-resource': true,
+  });
+
+  factory.addResource('grants', 'welcome-message-world-read-fields')
+  .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+  .withRelated('fields', [
+    { type: 'fields', id: 'title' },
+    { type: 'fields', id: 'message' }
+  ])
+  .withAttributes({
     'may-read-fields': true,
   });
 

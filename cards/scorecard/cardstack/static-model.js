@@ -27,17 +27,26 @@ factory.addResource('content-types', 'scorecards')
     .withRelated('related-types', [{ type: 'content-types', id: 'photos' }]),
   ]);
 
-  factory.addResource('grants', 'scorecard-world-read')
+  factory.addResource('grants', 'scorecard-world-read-resource')
   .withRelated('who', [{ type: 'groups', id: 'everyone' }])
   .withRelated('types', [
     { type: 'content-types', id: 'scorecards' }
   ])
   .withAttributes({
     'may-read-resource': true,
+  });
+
+  factory.addResource('grants', 'scorecard-world-read-fields')
+  .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+  .withRelated('fields', [
+    { type: 'fields', id: 'score' },
+    { type: 'fields', id: 'aphoto' }
+  ])
+  .withAttributes({
     'may-read-fields': true,
   });
 
-  factory.addResource('grants', 'scorecard-writers-update')
+  factory.addResource('grants', 'scorecard-writers-update-resource')
     .withRelated('who', [{ type: 'groups', id: 'everyone' }])
     .withRelated('types', [
       { type: 'content-types', id: 'scorecards' }
@@ -46,6 +55,15 @@ factory.addResource('content-types', 'scorecards')
       'may-create-resource': true,
       'may-update-resource': true,
       'may-delete-resource': true,
+    });
+
+  factory.addResource('grants', 'scorecard-writers-update-fields')
+    .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+    .withRelated('fields', [
+      { type: 'fields', id: 'score' },
+      { type: 'fields', id: 'aphoto' }
+    ])
+    .withAttributes({
       'may-write-fields': true
     });
 

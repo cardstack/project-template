@@ -24,17 +24,26 @@ factory.addResource('content-types', 'dashboards')
     .withRelated('related-types', [{ type: 'content-types', id: 'photos' }]),
   ]);
 
-  factory.addResource('grants', 'dashboard-world-read')
+  factory.addResource('grants', 'dashboard-world-read-resource')
   .withRelated('who', [{ type: 'groups', id: 'everyone' }])
   .withRelated('types', [
     { type: 'content-types', id: 'dashboards' }
   ])
   .withAttributes({
     'may-read-resource': true,
+  });
+
+  factory.addResource('grants', 'dashboard-world-read-fields')
+  .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+  .withRelated('fields', [
+    { type: 'fields', id: 'heading' },
+    { type: 'fields', id: 'entries' }
+  ])
+  .withAttributes({
     'may-read-fields': true,
   });
 
-  factory.addResource('grants', 'dashboard-writers-update')
+  factory.addResource('grants', 'dashboard-writers-update-resource')
     .withRelated('who', [{ type: 'groups', id: 'everyone' }])
     .withRelated('types', [
       { type: 'content-types', id: 'dashboards' }
@@ -43,6 +52,15 @@ factory.addResource('content-types', 'dashboards')
       'may-create-resource': true,
       'may-update-resource': true,
       'may-delete-resource': true,
+    });
+
+  factory.addResource('grants', 'dashboard-writers-update-fields')
+    .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+    .withRelated('fields', [
+      { type: 'fields', id: 'heading' },
+      { type: 'fields', id: 'entries' }
+    ])
+    .withAttributes({
       'may-write-fields': true
     });
 
