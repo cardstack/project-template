@@ -5,6 +5,14 @@
       {{#github-login as |login|}}
         {{yield session login}}
       {{/github-login}}
+    {{else if session.isAuthenticated}}
+      <button
+        class="btn-edit"
+        id="logout-button"
+        onclick={{action session.logout}}
+      >
+        Log out
+      </button>
     {{else}}
       {{#mock-login as |login|}}
           <button class='btn-edit' {{action login}}>
