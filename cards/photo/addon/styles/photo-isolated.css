@@ -3,3 +3,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.photo-isolated img {
+  width: 100%;
+}

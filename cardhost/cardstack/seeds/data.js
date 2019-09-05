@@ -9,14 +9,13 @@ Seed data defined here will be available in the
 ephemeral data source.
 */
 
-  factory.addResource('dashboards', 1).withAttributes({
-      heading: 'Dashboard heading',
-    });
-
-    factory.addResource('photos', 1).withAttributes({
-      "photo-title": 'My title 1',
-      comment: 'only for admins'
-    });
+  factory.addResource('photos', 1).withAttributes({
+    'photo-title': 'Moraine Lake, Canada',
+    'photographer': 'John Lee',
+    'image-url': '/images/moraine-lake-john-lee.jpg',
+    'alt-text': 'a serene lake in the summer surrounded by trees and mountains',
+    'comment': 'This should be a frontrunner'
+  });
 }
 
 
