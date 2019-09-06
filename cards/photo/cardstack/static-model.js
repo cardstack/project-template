@@ -21,7 +21,7 @@ factory.addResource('content-types', 'photos')
     })
   ]);
 
-    factory.addResource('grants', 'photo-resource-read')
+  factory.addResource('grants', 'photo-resource-read')
     .withRelated('who', [{ type: 'groups', id: 'everyone' }])
     .withRelated('types', [
       {type: 'content-types', id: 'photos'},
@@ -37,14 +37,13 @@ factory.addResource('content-types', 'photos')
       {type: 'fields', id: 'photographer'},
       {type: 'fields', id: 'image-url'},
       {type: 'fields', id: 'alt-text'},
-      {type: 'fields', id: 'comment'},
     ])
     .withAttributes({
       'may-read-fields': true,
     });
   
   
-  factory.addResource('grants', 'admin-resource-update')
+  factory.addResource('grants', 'commenter-resource-update')
     .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
     .withRelated('types', [
       {type: 'content-types', id: 'photos'},
@@ -53,10 +52,10 @@ factory.addResource('content-types', 'photos')
       'may-update-resource': true,
     });
   
-  factory.addResource('grants', 'admin-field-update')
+  factory.addResource('grants', 'commenter-field-update')
     .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
     .withRelated('fields', [
-      {type: 'fields', id: 'comment'},    
+      {type: 'fields', id: 'comment'} 
     ])
     .withAttributes({
       'may-read-fields': true,
