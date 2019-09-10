@@ -9,8 +9,8 @@
     "node": ">= 8"
   },
   "devDependencies": {
-    "@cardstack/eslint-config": "^0.14.22",
-    "@cardstack/test-support": "^0.14.22",
+    "@cardstack/eslint-config": "^0.14.23",
+    "@cardstack/test-support": "^0.14.23",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "eslint": "^5.9.0",
