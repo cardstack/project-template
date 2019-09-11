@@ -9,10 +9,11 @@
     "node": ">= 8"
   },
   "devDependencies": {
-    "@cardstack/eslint-config": "^0.14.21",
-    "@cardstack/test-support": "^0.14.21",
+    "@cardstack/eslint-config": "^0.14.23",
+    "@cardstack/test-support": "^0.14.23",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
+    "babel-eslint": "^10.0.3",
     "eslint": "^5.9.0",
     "eslint-plugin-ember": "^6.0.1",
     "eslint-plugin-mocha": "^5.2.0",
