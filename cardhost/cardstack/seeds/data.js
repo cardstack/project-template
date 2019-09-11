@@ -84,6 +84,16 @@ if (process.env.HUB_ENVIRONMENT === 'development') {
     { type: 'movies', id: '5' },
     { type: 'movies', id: '6' },
   ]);
+
+/*
+Seed data defined here will be available in the
+ephemeral data source.
+*/
+
+  // factory.addResource('card-names', 1).withAttributes({
+  //     title: 'some-title',
+  //   });
+
 }
 
 
