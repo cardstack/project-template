@@ -12,8 +12,17 @@ factory.addResource('content-types', 'welcome-messages')
   ]);
 
   factory.addResource('welcome-messages', 1).withAttributes({
-    title: 'Welcome!',
-    message: 'Get ready to build your first project with the Card SDK.'
+    title: 'Welcome to the Card SDK!',
+    message: 'To edit or remove this welcome card, see cards/welcome-message and cardhost/cardstack/router.js'
   });
+
+  factory.addResource("grants")
+    .withRelated("who", [{ type: "groups", id: "everyone" }])
+    .withRelated("types", [{ type: 'content-types', id: 'welcome-messages' }])
+    .withAttributes({
+      "may-read-resource": true,
+      "may-read-fields": true
+    });
+
 let models = factory.getModels();
 module.exports = function() { return models; };
