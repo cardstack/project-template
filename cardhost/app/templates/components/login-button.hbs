@@ -1,8 +1,11 @@
 {{#if (is-component "cardstack-session")}}
   {{#cardstack-session as |session|}}
-    {{#if useGithubAuth}}
+    {{#if true}}
       {{#github-login as |login|}}
         {{yield session login}}
+        <button class='btn-edit' {{action login}}>
+          Edit Content
+        </button>
       {{/github-login}}
     {{else if session.isAuthenticated}}
       <button

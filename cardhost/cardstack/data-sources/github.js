@@ -9,8 +9,8 @@ factory.addResource('data-sources', 'github').withAttributes({
     'client-secret': process.env.GITHUB_CLIENT_SECRET,
     token: process.env.GITHUB_TOKEN,
     permissions: [
-      { repo: 'cardstack/project-template-data', permission: 'read' },
-      { repo: 'cardstack/project-template-data', permission: 'write' },
+      { repo: 'jenweber/project-data', permission: 'read' },
+      { repo: 'jenweber/project-data', permission: 'write' },
     ]
   }
 });

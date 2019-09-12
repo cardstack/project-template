@@ -27,7 +27,7 @@ const customGrantsAndGroups = function(factory, cardSchemas) {
     "search-query": {
       filter: {
         type: { exact: "github-users" },
-        permissions: { exact: "cardstack/project-template-data:read" }
+        permissions: { exact: "jenweber/project-data:read" }
       }
     }
   });
@@ -36,7 +36,7 @@ const customGrantsAndGroups = function(factory, cardSchemas) {
     "search-query": {
       filter: {
         type: { exact: "github-users" },
-        permissions: { exact: "cardstack/project-template-data:write" }
+        permissions: { exact: "jenweber/project-data:write" }
       }
     }
   });
@@ -153,15 +153,15 @@ module.exports = function() {
 
   generalSetup(factory);
 
-  const isUsingGitHub =
-    process.env.GITHUB_CLIENT_ID ||
-    process.env.GITHUB_CLIENT_SECRET ||
-    process.env.GITHUB_TOKEN;
+  // const isUsingGitHub =
+  //   process.env.GITHUB_CLIENT_ID ||
+  //   process.env.GITHUB_CLIENT_SECRET ||
+  //   process.env.GITHUB_TOKEN;
 
-  if (process.env.HUB_ENVIRONMENT === "development" && !isUsingGitHub) {
-    // the mock user is helpful for local testing
-    createMockUser(factory);
-  }
+  // if (process.env.HUB_ENVIRONMENT === "development" && !isUsingGitHub) {
+  //   // the mock user is helpful for local testing
+  //   createMockUser(factory);
+  // }
 
   customGrantsAndGroups(factory, cardSchemas);
 

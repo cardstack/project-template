@@ -30,22 +30,16 @@ factory.addResource('content-types', 'photos')
       'may-read-resource': true,
       'may-read-fields': true,
     });
-    factory.addResource('grants', 'commenter-resource-update')
+
+  factory.addResource('grants', 'photo-admin-update')
     .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
     .withRelated('types', [
-      {type: 'content-types', id: 'photos'},
+      { type: 'content-types', id: 'photos' }
     ])
     .withAttributes({
+      'may-create-resource': true,
       'may-update-resource': true,
-    });
-  
-  factory.addResource('grants', 'commenter-field-update')
-    .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
-    .withRelated('fields', [
-      {type: 'fields', id: 'comment'} 
-    ])
-    .withAttributes({
-      'may-read-fields': true,
+      'may-delete-resource': true,
       'may-write-fields': true
     });
 

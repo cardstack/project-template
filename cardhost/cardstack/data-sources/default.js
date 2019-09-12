@@ -17,7 +17,13 @@ let sources = [
     type: 'data-sources',
     id: 'default',
     attributes: {
-      'source-type': '@cardstack/ephemeral'
+      'source-type': '@cardstack/git',
+      params: {
+        remote: {
+          url: 'git@github.com:jenweber/project-data.git',
+          privateKey: process.env.GIT_PRIVATE_KEY,
+        }
+      }
     }
   }
 ];
