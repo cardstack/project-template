@@ -1,0 +1,8 @@
+<div class="photo-isolated">
+  <h1 data-test-photo-isolated-title>{{content.photoTitle}}</h1>
+  {{#cs-field content "imageUrl" as |image|}}
+    <img class="img-photo" src={{image}} alt={{content.altText}}>
+  {{/cs-field}}
+  <p>Photographer: {{content.photographer}}</p>
+  <p>{{content.comment}}</p>
+</div>

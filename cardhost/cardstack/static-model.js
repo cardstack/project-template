@@ -18,7 +18,7 @@ const customGrantsAndGroups = function(factory, cardSchemas) {
 
   // With this grant, anonymous users can see all Cards in the project.
   // Remove this line when you want to do card-by-card permissions instead.
-  everyoneCanReadAllCards(factory, cardSchemas);
+  // everyoneCanReadAllCards(factory, cardSchemas);
 
   // Your own groups and grants go here. Here are basics to get you started.
   // You can reference them in any Card in your project.
@@ -41,15 +41,13 @@ const customGrantsAndGroups = function(factory, cardSchemas) {
     }
   });
 
-  factory
-    .addResource("grants")
+  factory.addResource("grants")
     .withRelated("who", [{ type: "groups", id: "github-readers" }])
     .withAttributes({
       mayLogin: true
     });
 
-  factory
-    .addResource("grants")
+  factory.addResource("grants")
     .withRelated("who", [{ type: "fields", id: "id" }])
     .withRelated("types", [{ type: "content-types", id: "github-users" }])
     .withAttributes({

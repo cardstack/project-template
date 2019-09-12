@@ -4,6 +4,13 @@ let factory = new JSONAPIFactory();
 
 if (process.env.HUB_ENVIRONMENT === 'development') {
 
+  factory.addResource('photos', 1).withAttributes({
+    'photo-title': 'Dashboard heading',
+    'photographer': 'John Lee',
+    'image-url': '/images/moraine-lake-john-lee.jpg',
+    'alt-text': 'a serene lake in the summer surrounded by trees and mountains',
+    'comment': 'This should be a frontrunner'
+  });
 /*
 Seed data defined here will be available in the
 ephemeral data source.
