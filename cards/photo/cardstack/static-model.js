@@ -21,31 +21,27 @@ factory.addResource('content-types', 'photos')
     })
   ]);
 
-  factory.addResource('grants', 'photo-world-read')
+  // comment this out and things break
+  factory.addResource('grants', 'photo-resource-read')
     .withRelated('who', [{ type: 'groups', id: 'everyone' }])
+    .withRelated('types', [
+      {type: 'content-types', id: 'photos'},
+    ])
+    .withAttributes({
+      'may-read-resource': true,
+    });
+
+  factory.addResource('grants', 'photo-admin-update')
+    .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
     .withRelated('types', [
       { type: 'content-types', id: 'photos' }
     ])
     .withAttributes({
       'may-read-resource': true,
       'may-read-fields': true,
-    });
-    factory.addResource('grants', 'commenter-resource-update')
-    .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
-    .withRelated('types', [
-      {type: 'content-types', id: 'photos'},
-    ])
-    .withAttributes({
+      'may-create-resource': true,
       'may-update-resource': true,
-    });
-  
-  factory.addResource('grants', 'commenter-field-update')
-    .withRelated('who', [{ type: 'groups', id: 'github-writers' }])
-    .withRelated('fields', [
-      {type: 'fields', id: 'comment'} 
-    ])
-    .withAttributes({
-      'may-read-fields': true,
+      'may-delete-resource': true,
       'may-write-fields': true
     });
 
