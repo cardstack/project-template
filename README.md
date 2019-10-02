@@ -66,6 +66,11 @@ Use the environment variable `LOG_LEVELS` to adjust the logging on the Cardstack
 #### Postgres
 The standard Postgres environment variables `PGHOST`, `PGPORT`, `PGUSER`, `PGPASSWORD`, etc are supported. You can control the postgres instance that the Cardstack hub uses by setting these environment variables.
 
+#### `ECR_ENDPOINT`
+This is the path to the ECR (Elastic Container Registry) that you have created on AWS.
+Docker images will be published here.
+It should look something like `<account number>.dkr.ecr.<region>.amazonaws.com/project-template`.
+
 ## Data Sources
 
 The Cardstack Hub can connected to many different types of data sources. Some data sources are read-only (like the Ethereum data source, Crypto Compare data source, and the asset history data sources in the Card Folio project https://github.com/cardstack/portfolio) and others are writable for holding content types that are controlled by the hub, including articles and "boards" (groups of articles) that are used in this project. The way we have arranged our writable data sources for the Card Board project is to use an "ephemeral" data source when the Card Board application is running with `HUB_ENVIRONMENT=development` environment variable and to use a git data source when the Portfolio application is running with the `HUB_ENVIRONMENT=production` environment variable. By default, cardstack applications run with the `HUB_ENVIRONMENT=development` environment variable.
