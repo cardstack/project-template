@@ -25,9 +25,8 @@ RUN BUILD_ONLY=true yarn install \
 
 COPY code-layer/ ./
 
-# Uncomment to set up PaperTrail logging.
+# Uncomment this and fill in the port number to set up PaperTrail logging.
 # This service helps you easily access Docker container logs.
-# Note that the port number may need to be configured for new accounts.
 # Log file emitters can be managed in PaperTrail's dashboard.
 # RUN curl -L https://github.com/papertrail/remote_syslog2/releases/download/v0.20/remote-syslog2_0.20_amd64.deb -o remote-syslog2.deb \
 #  && dpkg -i ./remote-syslog2.deb \
@@ -39,7 +38,7 @@ COPY code-layer/ ./
 #  - /srv/hub/logs/node.log\n\
 # destination:\n\
 #  host: logs3.papertrailapp.com\n\
-#  port: 41828\n\
+#  port: XXXXX\n\
 #  protocol: tls\n\
 # pid_file: /var/run/remote_syslog.pid'\
 # > /etc/log_files.yml
