@@ -36,7 +36,6 @@ services:
       - GITHUB_CLIENT_SECRET
       - GITHUB_TOKEN
       - WEBHOOK_URL
-      - ECR_ENDPOINT
 
 networks:
   default:
