@@ -37,8 +37,6 @@ Alternatively, you can run the Hub and Ember CLI separately with:
     yarn start-hub
     yarn start-ember
 
-### Environment Variables:
-
 #### `HUB_ENVIRONMENT`
 The `HUB_ENVIRONMENT` environment variable is used to tell the Cardstack hub which environment it is running within. The possible values are `development`, `test`, and `production`. Generally the `development` environment is used for doing development on your local machine. The `test` environment is used for running the automated tests. The `production` environment is used for running a hosted application. If this environment variable is not specified, then the `HUB_ENVIRONMENT=development` is assumed.
 
@@ -70,6 +68,7 @@ The standard Postgres environment variables `PGHOST`, `PGPORT`, `PGUSER`, `PGPAS
 This is the path to the ECR (Elastic Container Registry) that you have created on AWS.
 Docker images will be published here.
 It should look something like `<account number>.dkr.ecr.<region>.amazonaws.com/project-template`.
+See the `deploy` directory and `travis.yml`, which determine deployment configuration.
 
 ## Data Sources
 
