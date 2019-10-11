@@ -10,22 +10,22 @@ branches:
   only:
   - master
     # make sure to include any branches you want to deploy to sandbox env here as well
-  - my_feature_branch
+  - try-deploying
 
-# services:
-#   - docker
+services:
+  - docker
 
 matrix:
   fast_finish: true
 
-# before_install:
+before_install:
   - echo "$SSH_PRIVATE_KEY" > $HOME/.ssh/id_rsa && chmod 400 $HOME/.ssh/id_rsa
   - pip install --user awscli
   - aws ecr --region us-east-1 get-login --no-include-email | bash
   - docker network create cardstack
   - docker run -d --rm --network cardstack --name postgres cardstack/pg-test
 
-# install:
+install:
   - cd deploy && yarn install && cd ..
   - node ./deploy/build.js
   - docker build -f deploy/Dockerfile.tests -t tests .
@@ -36,7 +36,7 @@ script:
 # Deploying to staging requires you to fill in your own configuration.
 # The commented-out config below is just provided as an example.
 
-# deploy:
+deploy:
   - provider: script
     skip_cleanup: true
     script: TARGET_NAME='my-project-name.cardsandbox.com' deploy/deploy.sh staging $TRAVIS_BRANCH
@@ -51,7 +51,7 @@ script:
     skip_cleanup: true
     script: TARGET_NAME='my-project-name.cardsandbox.com' deploy/deploy.sh sandbox $TRAVIS_BRANCH
     on:
-      branch: my_feature_branch
+      branch: try-deploying
 
 notifications:
   email: false
