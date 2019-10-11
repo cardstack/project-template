@@ -27,7 +27,6 @@ if [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
                   LOG_LEVELS \
                   GIT_PRIVATE_KEY \
                   GIT_BRANCH_PREFIX \
-                  ECR_ENDPOINT \
                   CARDSTACK_SESSIONS_KEY; do
       command="export ${variable}=\$${variable}"
       eval $command
@@ -40,6 +39,8 @@ if [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
   done
 
   export TARGET_ENV="project-template-$target_env"
+
+  export CONTAINER_REPO="${ECR_ENDPOINT}"
 
   export INITIAL_DATA_DIR=/srv/hub/project-template/cardstack
 
