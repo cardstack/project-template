@@ -48,4 +48,4 @@ CMD remote_syslog --hostname "${TARGET_ENV:-unknown_env}_$(hostname)" && yarn st
 # Change this if your content-types are not publically readable.
 # This configuration will cause the container to restart after
 # 30 seconds without a successful response.
-HEALTHCHECK --interval=30s --timeout=30s --start-period=30s --retries=3 CMD curl -f -H "Accept:application/vnd.api+json" http://localhost:3000/api/content-types || exit 1
+HEALTHCHECK --interval=60s --timeout=60s --start-period=60s --retries=3 CMD curl -f -H "Accept:application/vnd.api+json" http://localhost:3000/api/content-types || exit 1

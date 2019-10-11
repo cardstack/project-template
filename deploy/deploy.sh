@@ -29,7 +29,7 @@ if [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
                   GIT_BRANCH_PREFIX \
                   ECR_ENDPOINT \
                   CARDSTACK_SESSIONS_KEY; do
-      command="export ${variable}=\$${target_env}_${variable}"
+      command="export ${variable}=\$${variable}"
       eval $command
   done
 
