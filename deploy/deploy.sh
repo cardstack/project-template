@@ -27,6 +27,7 @@ if [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
                   LOG_LEVELS \
                   GIT_PRIVATE_KEY \
                   GIT_BRANCH_PREFIX \
+                  ECR_ENDPOINT \
                   CARDSTACK_SESSIONS_KEY; do
       command="export ${variable}=\$${target_env}_${variable}"
       eval $command
@@ -40,18 +41,15 @@ if [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
 
   export TARGET_ENV="project-template-$target_env"
 
-  # This needs to be exported because our docker-compose.yml below is interpolating it
-  export CONTAINER_REPO=680542703984.dkr.ecr.us-east-1.amazonaws.com/project-template
-
   export INITIAL_DATA_DIR=/srv/hub/project-template/cardstack
 
-  docker tag project-template $CONTAINER_REPO:$docker_image_label
+  docker tag project-template $ECR_ENDPOINT:$docker_image_label
 
   # This needs to be exported because our docker-compose.yml below is interpolating it
   # We are authorized to push because earlier in our .travis.yml we logged in via "aws ecr"
-  export DIGEST=`docker push $CONTAINER_REPO:$docker_image_label | grep digest: | cut -d " " -f 3`
+  export DIGEST=`docker push $ECR_ENDPOINT:$docker_image_label | grep digest: | cut -d " " -f 3`
 
-  echo "Published digest $DIGEST for $CONTAINER_REPO:$docker_image_label"
+  echo "Published digest $DIGEST for $ECR_ENDPOINT:$docker_image_label"
 
   export HUB_ENVIRONMENT="production" # all builds that we deploy are prod builds
 
