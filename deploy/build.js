@@ -22,14 +22,14 @@ moduleRootFolders.forEach(moduleRoot => {
   });
 });
 
-copySync(join(root, 'project-template/package.json'), join(context, 'dep-layer/project-template/package.json'));
+copySync(join(root, 'cardhost/package.json'), join(context, 'dep-layer/cardhost/package.json'));
 copySync(join(root, 'package.json'), join(context, 'dep-layer/package.json'));
 copySync(join(root, 'yarn.lock'), join(context, 'dep-layer/yarn.lock'));
 
 // some of these should possibly be cardhost instead of project-template
 // code-layer contains everything else, which is much cheaper to rebuild (no yarn install)
 copySync(join(root, 'node-test-runner.js'), join(context, 'code-layer/node-test-runner.js'));
-copySync(join(root, 'project-template/cardstack'), join(context, 'code-layer/project-template/cardstack'));
+copySync(join(root, 'cardhost/cardstack'), join(context, 'code-layer/cardhost/cardstack'));
 moduleRootFolders.forEach(moduleRoot => {
   codeLayerFiles.forEach(serverFile => {
     glob.sync(join(root, `${moduleRoot}/*/${serverFile}`)).forEach(filename => {
