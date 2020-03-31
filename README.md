@@ -1,6 +1,6 @@
-# Basic Project Template
+# Basic Project Template - deprecated
 
-This repository contains the fundemental componenets of a basic Cardstack project. It only has an example card called 'welcome-message'. We are using this Github repo as the start point of a new Cardstack project.
+This project is deprecated. It only applied to ~0.14 versions of Cardstack, and things are much easier now! To build a Cardstack project, please see the latest docs at [https://docs.cardstack.com](https://docs.cardstack.com)
 
 In order to access tutorials, please follow this link: https://docs.cardstack.com/release/
 
